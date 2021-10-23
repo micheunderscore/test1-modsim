@@ -191,6 +191,7 @@ s_print("Total number of tutors: " + str(len(tutorArr)))
 
 while simTime < simEnd:
     s_print("@@ TIME ELAPSED : " + str(simTime) + ":00 hrs")
+    studentQsCopy = []
     numStudents = random.randint(1, maxQuestions)
 
     for student in range(numStudents):
@@ -199,11 +200,12 @@ while simTime < simEnd:
         studObj = UniversityStudent(tempName["name"], tempName["id"], tempTopic)
         studentQs[tempTopic["id"]].put(studObj)
         studObj.start()
+        studentQsCopy = studentQs
 
     tempArr = []
     for i in range(3):
-        tempArr.append(studentQs[i].qsize())
-        s_print("Queue length for " + topics[i]["title"] + " is: " + str(studentQs[i].qsize()))
+        tempArr.append(studentQsCopy[i].qsize())
+        s_print("Queue length for " + topics[i]["title"] + " is: " + str(studentQsCopy[i].qsize()))
     studentTotals.append(tempArr)
     simTime += 1
 
