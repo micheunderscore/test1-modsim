@@ -6,6 +6,14 @@
 - **Matrix ID :** 18001179
 - **Batch :** Computer Science
 
+## Getting Started
+1. Run 
+```bash
+$ python math-class-reg.py
+````
+2. Enjoy simulation
+3. CSV file should be generated at the end of the simulation.
+
 ## Business Case
 
 This simulation could be used to improve productivity within the university that it is
